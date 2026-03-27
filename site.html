@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Pujya Shri Pandit Arvind Krisha Shastri Ji Maharaj | Kathavachak</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #2c2418;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, .logo, .nav-links a, .hero-title {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* custom colors */
+    :root {
+      --gold: #c7a45b;
+      --gold-dark: #aa853d;
+      --deep-burgundy: #6b2e2e;
+      --cream: #fff7ed;
+      --soft-black: #2c2418;
+      --light-sand: #f8f0e3;
+      --shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    /* scroll reveal base */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header / navbar */
+    header {
+      background: rgba(255, 247, 237, 0.96);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(199, 164, 91, 0.2);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #b67e2e, #6b2e2e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.3;
+    }
+    .logo span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #b67e2e;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #3a2c1f;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold-dark);
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #3a2c1f;
+    }
+
+    /* language toggle */
+    .lang-toggle {
+      background: var(--gold);
+      border: none;
+      border-radius: 40px;
+      padding: 8px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: 0.2s;
+      margin-left: 20px;
+    }
+    .lang-toggle:hover {
+      background: var(--gold-dark);
+      color: white;
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #2c2418;
+      box-shadow: 0 8px 18px rgba(199, 164, 91, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 35px rgba(170, 133, 61, 0.5);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--gold);
+      background: transparent;
+      color: var(--gold-dark);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    /* hero */
+    .hero {
+      min-height: 90vh;
+      background-color: #5a4a3a;
+      background-image: linear-gradient(107deg, rgba(44,36,24,0.75) 0%, rgba(44,36,24,0.4) 100%), url('./pictures/IMG-20250323-WA0004.jpg');
+      background-attachment: scroll;
+      background-position: center;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      color: white;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .hero-title {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #2c2418;
+      text-align: center;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #7a6a5a;
+      max-width: 680px;
+      margin: 0 auto 48px auto;
+      font-size: 1.1rem;
+    }
+
+    /* about */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-img img {
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 25px 45px rgba(199, 164, 91, 0.25);
+      transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), box-shadow 0.6s;
+    }
+
+    .about-img img:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 35px 60px rgba(107, 46, 46, 0.2);
+    }
+
+    .about-text p {
+      margin-bottom: 24px;
+      font-size: 1.05rem;
+      color: #3e3428;
+    }
+
+    /* trust section */
+    .trust-content {
+      background: white;
+      padding: 32px;
+      border-radius: 24px;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      line-height: 1.8;
+    }
+
+    .trust-content p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      color: #3e3428;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .trust-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border-top: 4px solid var(--gold);
+    }
+
+    .trust-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 32px 48px rgba(199, 164, 91, 0.25);
+    }
+
+    .trust-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      color: #2c2418;
+    }
+
+    .trust-card p {
+      margin-bottom: 16px;
+      color: #3e3428;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .vision-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .vision-list li {
+      padding-left: 28px;
+      margin-bottom: 14px;
+      position: relative;
+      color: #3e3428;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .vision-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border-left: 5px solid var(--gold);
+    }
+
+    .event-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 32px 48px rgba(199, 164, 91, 0.25);
+    }
+
+    .event-date {
+      background: var(--gold);
+      padding: 12px 20px;
+      font-weight: 700;
+      color: #2c2418;
+      display: inline-block;
+      border-radius: 40px;
+      margin: 20px 0 0 20px;
+    }
+
+    .event-info {
+      padding: 20px 24px 28px;
+    }
+
+    .event-info h3 {
+      font-size: 1.6rem;
+      margin: 12px 0 8px;
+    }
+
+    /* gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .gallery-item {
+      border-radius: 24px;
+      overflow: hidden;
+      height: 300px;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+      transition: 0.4s ease;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.12) rotate(1deg);
+    }
+    
+    .gallery-item:hover {
+      box-shadow: 0 20px 40px rgba(199, 164, 91, 0.3);
+    }
+
+    /* media section (audio/video) */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .media-card {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    /* carousel */
+    .carousel-container {
+      position: relative;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      max-width: 100%;
+    }
+
+    .carousel-video {
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px 0;
+      background: #f8f0e3;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #d9cebc;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background: var(--gold);
+      transform: scale(1.3);
+    }
+
+    .dot:hover {
+      background: var(--gold-dark);
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    /* contact form */
+    .contact-flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 16px 20px;
+      border: 1px solid #e2d9cf;
+      border-radius: 32px;
+      font-family: inherit;
+      background: #fff;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(199,164,91,0.2);
+    }
+
+    .contact-info {
+      background: var(--light-sand);
+      padding: 32px;
+      border-radius: 32px;
+    }
+
+    .contact-info i {
+      color: var(--gold);
+      width: 32px;
+      font-size: 1.3rem;
+    }
+
+    /* footer */
+    footer {
+      background: #1f1a12;
+      color: #d9cebc;
+      padding: 56px 0 32px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .social-icons a {
+      color: #d9cebc;
+      font-size: 1.5rem;
+      margin-right: 20px;
+      transition: 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #3e3527;
+    }
+
+    /* mobile nav */
+    @media (max-width: 850px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 80px);
+        background: #fffaf3;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: 0.4s;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+        gap: 2rem;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .about-grid, .media-grid, .contact-flex {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .container {
+        padding: 0 24px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--gold);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c2418;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo" id="siteLogo">PUJYA SHRI PANDIT ARVIND KRISHA SHASTRI JI MAHARAJ <span></span></div>
+      <div style="display: flex; align-items: center;">
+        <button class="lang-toggle" id="langToggle">हिंदी</button>
+        <div class="menu-icon" id="menuIcon">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-key="navHome">Home</a></li>
+        <li><a href="#about" data-key="navAbout">About</a></li>
+        <li><a href="#trust" data-key="navTrust">Trust</a></li>
+        <li><a href="#gallery" data-key="navGallery">Gallery</a></li>
+        <li><a href="#media" data-key="navMedia">Media</a></li>
+        <li><a href="#contact" data-key="navContact">Connect</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content fade-up">
+        <h1 class="hero-title" data-key="heroTitle">Divine Narratives <br>for the Modern Soul</h1>
+        <p class="hero-sub" data-key="heroSub">Immerse in timeless wisdom through soulful Katha — experience devotion, stories, and spiritual upliftment with Pujya Shri Arvind Krisha Shastri Ji Maharaj.</p>
+        <a href="#trust" class="btn btn-primary" data-key="heroBtn">Explore Trust & Initiatives <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title fade-up" data-key="aboutTitle">About Śrī Kathāvachak</div>
+      <div class="section-sub fade-up" data-key="aboutSub">Bridging ancient scriptures with contemporary life</div>
+      <div class="about-grid">
+        <div class="about-img fade-up">
+          <img src="./pictures/IMG-20250323-WA0018.jpg" alt="Kathavachak portrait">
+        </div>
+        <div class="about-text fade-up">
+          <p data-key="aboutP1">Pujya Pandit Shri Arvind Krishna Shastri Ji Maharaj is a revered Kathavachak and spiritual guide whose divine voice and profound knowledge illuminate the path of devotion and righteousness. Through his soulful narrations, he has touched countless hearts and inspired a deeper connection with Sanatan Dharma. He is widely known for conducting sacred discourses including Shrimad Bhagwat Katha, Ram Katha, Shiv Katha, and Devi Bhagwat, where his words beautifully blend devotion, wisdom, and life-transforming teachings.</p>
+          <p data-key="aboutP2">Beyond Kathas, Maharaj Ji is also a highly respected expert in Karmkand, Anusthan, and all types of religious Yagyas, guiding devotees in performing rituals with authenticity and spiritual precision. Having received his traditional and spiritual education from the holy cities of Varanasi and Vrindavan—renowned centers of Vedic learning and devotion—he continues to spread the light of spirituality. Currently residing in Itwa Chitrakoot, Maharaj Ji serves society through his divine teachings, remaining a guiding force for devotees seeking peace, purpose, and devotion in their lives.</p>
+          <a href="#media" class="btn btn-outline" data-key="aboutBtn">Listen to Discourses <i class="fas fa-headphones"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Initiatives -->
+  <section id="trust" style="background: #fff3e8;">
+    <div class="container">
+      <div class="section-title fade-up" data-key="trustTitle">🌺 About Maa Sharda Shakti Dham Lok Kalyan Trust</div>
+      <div class="section-sub fade-up" data-key="trustSub">Dedicated to the upliftment of society through spiritual, cultural, and charitable activities</div>
+      
+      <div class="trust-content fade-up">
+        <p data-key="trustP1">Maa Sharda Shakti Dham Lok Kalyan Trust is a sacred initiative dedicated to the upliftment of society through spiritual, cultural, and charitable activities. Guided by the divine vision of Pujya Pandit Shri Arvind Krishna Shastri Ji Maharaj, the trust works tirelessly to promote the values of Sanatan Dharma and serve humanity with devotion.</p>
+        
+        <p data-key="trustP2">The core mission of the trust is to organize and support religious activities, Kathas, Yagyas, Anusthans, and other dharmik events, ensuring that the light of spirituality reaches every corner of society. With a strong commitment to faith and service, the trust strives to take dharmik initiatives to greater heights and inspire future generations.</p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-card fade-up">
+          <h3 data-key="gaushalaTitle">🐄 Maa Sharda Shakti Dham Gaushala</h3>
+          <p data-key="gaushalaP1">Under the noble guidance of the trust, the Maa Sharda Shakti Dham Gaushala has been established as a symbol of compassion and seva. Here, cows are nurtured, protected, and served with utmost care and devotion.</p>
+          <p data-key="gaushalaP2">Gaushala is not just a place, but a living embodiment of Gau Seva, where every effort is made to ensure the well-being, nourishment, and safety of cows. It reflects the deep-rooted cultural and spiritual significance of cow protection in Sanatan Dharma.</p>
+          <p data-key="gaushalaP3">Through this initiative, the trust spreads awareness about the importance of cow service, kindness, and sustainable living, encouraging society to participate in this noble cause.</p>
+        </div>
+
+        <div class="trust-card fade-up">
+          <h3 data-key="visionTitle">🌼 Vision & Purpose</h3>
+          <ul class="vision-list" data-key="visionList">
+            <li>To promote and preserve Sanatan Dharma and cultural values</li>
+            <li>To organize and expand religious and spiritual activities</li>
+            <li>To serve society through seva, गौ सेवा (cow service), and charitable works</li>
+            <li>To take dharmik initiatives to greater heights and wider reach</li>
+            <li>To inspire people towards a life of faith, compassion, and righteousness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-title fade-up" data-key="galleryTitle">Moments of Grace</div>
+      <div class="section-sub fade-up" data-key="gallerySub">Glimpses from recent Kathas, Yagnas, and spiritual retreats</div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- Media -->
+  <section id="media" style="background: #fef8f0;">
+    <div class="container">
+      <div class="section-title fade-up" data-key="mediaTitle">Divine Media - Live Katha</div>
+      <div class="section-sub fade-up" data-key="mediaSub">Watch live discourses and spiritual sessions with Pujya Maharaj Ji</div>
+      <div class="media-grid">
+        <div class="media-card fade-up">
+          <h3 data-key="liveTitle1">📺 Live Satsang - Part 1</h3>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/WBod70klEro" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="margin-top: 12px;" data-key="liveDesc1">Divine spiritual discourse filled with wisdom and devotion.</p>
+        </div>
+        <div class="media-card fade-up">
+          <h3 data-key="liveTitle2">📺 Live Katha - Part 2</h3>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/dh5vAxyX6Ng" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="margin-top: 12px;" data-key="liveDesc2">Experience the sacred stories and spiritual teachings from our Guru.</p>
+        </div>
+        <div class="media-card fade-up">
+          <h3 data-key="liveTitle3">📺 Morning Satsang</h3>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/ttdzcHqr4dQ" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="margin-top: 12px;" data-key="liveDesc3">Begin your day with divine wisdom and spiritual guidance.</p>
+        </div>
+        <div class="media-card fade-up">
+          <h3 data-key="liveTitle4">📺 Evening Discourse</h3>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/-mckdhcZAHE" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="margin-top: 12px;" data-key="liveDesc4">Spiritual insights and devotional stories for evening contemplation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rotating Video Carousel -->
+  <section id="carousel" style="background: #fff3e8; padding: 60px 0;">
+    <div class="container">
+      <div class="section-title fade-up" data-key="carouselTitle">✨Spiritual Videos</div>
+      <div class="section-sub fade-up" data-key="carouselSub"></div>
+      <div class="carousel-container fade-up">
+        <div class="carousel-video">
+          <div class="video-wrapper">
+            <iframe id="carouselIframe" src="https://www.youtube.com/embed/85JBTXAkmEQ" title="Carousel video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-dots">
+          <span class="dot active" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title fade-up" data-key="contactTitle">Connect with the Seva Ashram</div>
+      <div class="section-sub fade-up" data-key="contactSub">Send your blessings, questions, or invite a Katha to your city</div>
+      <div class="contact-flex">
+        <div class="contact-form fade-up">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" placeholder="Your Name *" required data-key-placeholder="contactName">
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address *" required data-key-placeholder="contactEmail">
+            </div>
+            <div class="form-group">
+              <textarea rows="4" placeholder="Message / Invitation details..." data-key-placeholder="contactMsg"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-key="contactBtn">Send Message <i class="fas fa-feather-alt"></i></button>
+          </form>
+        </div>
+        <div class="contact-info fade-up">
+          <h3><i class="fas fa-map-marker-alt"></i> <span data-key="contactAddressTitle">Ashram & Office</span></h3>
+          <p data-key="contactAddress">Chitrakoot Dham (UP) - 210205
+                  <br>  Shri dham Vrindavan , Mathura (UP) -281121 
+          </p>
+          <p><i class="fas fa-phone-alt"></i> +91 7355683091 , 9559378387</p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:panditarvindshasrti3@gmail.com" style="color: inherit; text-decoration: none; font-weight: 600;">panditarvindshasrti3@gmail.com</a> , <a href="mailto:mssdlktrust@gmail.com" style="color: inherit; text-decoration: none; font-weight: 600;">mssdlktrust@gmail.com</a></p>
+          <hr style="margin: 20px 0; border-color: #e6d9cb;">
+          <h3 data-key="contactBroadcast">Katha Broadcast</h3>
+          <p data-key="contactBroadcastDesc"> YouTube & Facebook </p>
+          <div class="social-icons" style="margin-top: 24px;">
+            <a href="https://www.youtube.com/@panditarvindshastriji" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/pandit_arvind_shastri_ji?igsh=NG1ndThzbmYxdW5z" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/pandit.arvind.shastri?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-soundcloud"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <div class="logo" style="color:#d9cebc; background:none;" id="footerLogo">PUJYA SHRI PANDIT ARVIND KRISHA SHASTRI JI MAHARAJ</div>
+        <p style="margin-top: 10px;" data-key="footerTagline">Illuminating hearts through sacred storytelling since 2002.</p>
+      </div>
+      <div>
+        <h4 data-key="footerQuick">Quick Links</h4>
+        <ul style="list-style: none; margin-top: 10px;">
+          <li><a href="#home" style="color:#d9cebc; text-decoration: none;" data-key="footerHome">Home</a></li>
+          <li><a href="#trust" style="color:#d9cebc; text-decoration: none;" data-key="footerTrust">Trust & Initiatives</a></li>
+          <li><a href="#media" style="color:#d9cebc; text-decoration: none;" data-key="footerMedia">Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-key="footerNews">Newsletter</h4>
+        <p data-key="footerNewsText">Stay updated with katha schedules</p>
+        <input type="email" placeholder="Email" style="padding: 8px 15px; border-radius: 40px; border: none; margin-top: 8px;" data-key-placeholder="footerEmail">
+        <button style="background: var(--gold); border: none; border-radius: 40px; padding: 8px 18px; margin-top: 8px;" data-key="footerSubscribe">Subscribe</button>
+      </div>
+    </div>
+    <div style="text-align: center; padding: 24px 0; border-top: 1px solid #3e3527; margin-top: 32px;">
+      <h4 style="color: #d9cebc; margin-bottom: 16px;">Follow Us on Social Media</h4>
+      <div class="social-icons" style="margin-top: 16px; display: flex; justify-content: center; gap: 20px;">
+        <a href="https://www.youtube.com/@panditarvindshastriji" target="_blank" style="color: #d9cebc; font-size: 1.8rem; transition: 0.3s;"><i class="fab fa-youtube"></i></a>
+        <a href="https://instagram.com/pandit_arvind_shastri_ji?igsh=NG1ndThzbmYxdW5z" target="_blank" style="color: #d9cebc; font-size: 1.8rem; transition: 0.3s;"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/pandit.arvind.shastri?mibextid=ZbWKwL" target="_blank" style="color: #d9cebc; font-size: 1.8rem; transition: 0.3s;"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+  // Translation dictionary (English -> Hindi)
+  const translations = {
+    // Navigation
+    navHome: "मुख्यपृष्ठ", navAbout: "परिचय", navTrust: "ट्रस्ट", navGallery: "गैलरी", navMedia: "मीडिया", navContact: "संपर्क",
+    // Hero
+    heroTitle: "आधुनिक आत्मा के लिए <br>दिव्य कथाएँ",
+    heroSub: "आत्मिक कथा के माध्यम से शाश्वत ज्ञान में डूबें — पूज्य श्री अरविंद कृष्ण शास्त्री जी महाराज के साथ भक्ति, कथाओं और आध्यात्मिक उत्थान का अनुभव करें।",
+    heroBtn: "विश्वास और पहल देखें <i class='fas fa-arrow-right'></i>",
+    // About
+    aboutTitle: "श्री कथावाचक के बारे में",
+    aboutSub: "प्राचीन शास्त्रों को समकालीन जीवन से जोड़ना",
+    aboutP1: "पूज्य पंडित श्री अरविंद कृष्ण शास्त्री जी महाराज एक पूजनीय कथावाचक और आध्यात्मिक मार्गदर्शक हैं जिनकी दिव्य वाणी और गहन ज्ञान भक्ति और धर्म के पथ को प्रकाशित करते हैं। अपनी आत्मीय कथाओं के माध्यम से, उन्होंने अनगिनत हृदयों को छुआ है और सनातन धर्म के साथ गहरे जुड़ाव को प्रेरित किया है। वे श्रीमद् भागवत कथा, राम कथा, शिव कथा और देवी भागवत सहित पवित्र प्रवचन आयोजित करने के लिए व्यापक रूप से जाने जाते हैं, जहां उनके शब्द भक्ति, ज्ञान और जीवन-परिवर्तनकारी शिक्षाओं को सुंदरता से मिश्रित करते हैं।",
+    aboutP2: "कथाओं से परे, महाराज जी कर्मकांड, अनुष्ठान और सभी प्रकार के धार्मिक यज्ञों के एक अत्यधिक सम्मानित विशेषज्ञ हैं, जो भक्तों को प्रामाणिकता और आध्यात्मिक सटीकता के साथ अनुष्ठान करने में मार्गदर्शन करते हैं। वैदिक ज्ञान और भक्ति के प्रसिद्ध केंद्रों—वाराणसी और वृंदावन—से अपनी पारंपरिक और आध्यात्मिक शिक्षा प्राप्त करने के बाद, वे आध्यात्मिकता का प्रकाश फैलाना जारी रखते हैं। वर्तमान में इटवा चित्रकूट में निवास करते हुए, महाराज जी अपनी दिव्य शिक्षाओं के माध्यम से समाज की सेवा करते हैं, जो शांति, उद्देश्य और भक्ति की तलाश करने वाले भक्तों के लिए एक मार्गदर्शक शक्ति बने हुए हैं।",
+    aboutBtn: "प्रवचन सुनें <i class='fas fa-headphones'></i>",
+    // Events section
+    trustTitle: "🌺 मां शारदा शक्ति धाम लोक कल्याण ट्रस्ट के बारे में",
+    trustSub: "आध्यात्मिक, सांस्कृतिक और दाता गतिविधियों के माध्यम से समाज के उत्थान के लिए समर्पित",
+    trustP1: "मां शारदा शक्ति धाम लोक कल्याण ट्रस्ट आध्यात्मिक, सांस्कृतिक और दाता गतिविधियों के माध्यम से समाज के उत्थान के लिए समर्पित एक पवित्र पहल है। पूज्य पंडित श्री अरविंद कृष्ण शास्त्री जी महाराज की दिव्य दृष्टि से निर्देशित, ट्रस्ट सनातन धर्म के मूल्यों को बढ़ावा देने और भक्ति के साथ मानवता की सेवा करने के लिए निरंतर कार्य करता है।",
+    trustP2: "ट्रस्ट का मूल मिशन धार्मिक गतिविधियों, कथाओं, यज्ञों, अनुष्ठानों और अन्य धार्मिक कार्यक्रमों को संगठित करना और समर्थन करना है, यह सुनिश्चित करना कि आध्यात्मिकता का प्रकाश समाज के हर कोने तक पहुंचे। विश्वास और सेवा के प्रति दृढ़ प्रतिबद्धता के साथ, ट्रस्ट धार्मिक पहल को अधिक ऊंचाई तक ले जाने और भविष्य की पीढ़ियों को प्रेरित करने का प्रयास करता है।",
+    gaushalaTitle: "🐄 मां शारदा शक्ति धाम गौशाला",
+    gaushalaP1: "ट्रस्ट के नोबल मार्गदर्शन के तहत, मां शारदा शक्ति धाम गौशाला को करुणा और सेवा के प्रतीक के रूप में स्थापित किया गया है। यहां, गायों को परम देखभाल और भक्ति के साथ पोषित, संरक्षित और सेवा की जाती है।",
+    gaushalaP2: "गौशाला केवल एक जगह नहीं है, बल्कि गौ सेवा का एक जीवंत अवतार है, जहां गायों की भलाई, पोषण और सुरक्षा सुनिश्चित करने के लिए हर प्रयास किया जाता है। यह सनातन धर्म में गौ संरक्षण के गहरे सांस्कृतिक और आध्यात्मिक महत्व को दर्शाता है।",
+    gaushalaP3: "इस पहल के माध्यम से, ट्रस्ट गौ सेवा, दया और टिकाऊ जीवन के महत्व के बारे में जागरूकता फैलाता है, समाज को इस महान कारण में भाग लेने के लिए प्रोत्साहित करता है।",
+    visionTitle: "🌼 दृष्टि और उद्देश्य",
+    visionList: "सनातन धर्म और सांस्कृतिक मूल्यों को बढ़ावा देना और संरक्षित करना|धार्मिक और आध्यात्मिक गतिविधियों को संगठित करना और विस्तारित करना|सेवा, गौ सेवा और दाता कार्यों के माध्यम से समाज की सेवा करना|धार्मिक पहल को अधिक ऊंचाई और अधिक पहुंच के लिए लें|लोगों को विश्वास, करुणा और धार्मिकता के जीवन की ओर प्रेरित करना",
+    // Gallery
+    galleryTitle: "कृपा के क्षण",
+    gallerySub: "हाल की कथाओं, यज्ञों और आध्यात्मिक शिविरों की झलकियाँ",
+    // Media
+    mediaTitle: "दिव्य मीडिया - लाइव कथा",
+    mediaSub: "पूज्य महाराज जी के साथ लाइव प्रवचन और आध्यात्मिक सत्संग देखें",
+    liveTitle1: "📺 लाइव सत्संग - भाग 1",
+    liveDesc1: "दिव्य आध्यात्मिक प्रवचन जो ज्ञान और भक्ति से परिपूर्ण है।",
+    liveTitle2: "📺 लाइव कथा - भाग 2",
+    liveDesc2: "हमारे गुरु से पवित्र कथाओं और आध्यात्मिक शिक्षा का अनुभव करें।",
+    liveTitle3: "📺 प्रातः सत्संग",
+    liveDesc3: "दिन की शुरुआत दिव्य ज्ञान और आध्यात्मिक मार्गदर्शन के साथ करें।",
+    liveTitle4: "📺 संध्या प्रवचन",
+    liveDesc4: "आध्यात्मिक अंतर्दृष्टि और भक्तिमय कथाएं संध्या चिंतन के लिए।",
+    // Contact
+    contactTitle: "सेवा आश्रम से जुड़ें",
+    contactSub: "अपना आशीर्वाद, प्रश्न भेजें या अपने शहर में कथा का आमंत्रण दें",
+    contactName: "आपका नाम *",
+    contactEmail: "ईमेल पता *",
+    contactMsg: "संदेश / आमंत्रण विवरण...",
+    contactBtn: "संदेश भेजें <i class='fas fa-feather-alt'></i>",
+    contactAddressTitle: "आश्रम और कार्यालय",
+    contactAddress: "चित्रकूट धाम, उत्तर प्रदेश - 210205<br>वृंदावन धाम, उत्तर प्रदेश - 281121",
+    contactBroadcast: " कथा प्रसारण",
+    contactBroadcastDesc: " YouTube और Facebook  पर",
+    // Footer
+    footerTagline: "2002 से पवित्र कथाओं के माध्यम से हृदयों को आलोकित करना।",
+    footerQuick: "त्वरित लिंक",
+    footerHome: "मुख्यपृष्ठ",
+    footerTrust: "विश्वास & पहल",
+    footerMedia: "मीडिया",
+    footerNews: "समाचार पत्र",
+    footerNewsText: "कथा कार्यक्रमों की जानकारी पाएँ",
+    footerEmail: "ईमेल",
+    footerSubscribe: "सदस्यता लें",
+    // Carousel
+    carouselTitle: "✨ आध्यात्मिक वीडियो"
+   
+  };
+
+  let currentLang = 'en'; // 'en' or 'hi'
+
+  function applyLanguage(lang) {
+    if (lang === 'hi') {
+      // Replace all elements with data-key attribute
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            // For input placeholders we use data-key-placeholder
+          } else if (el.tagName === 'BUTTON') {
+            el.innerHTML = translations[key];
+          } else {
+            el.innerHTML = translations[key];
+          }
+        }
+      });
+      // Handle placeholders separately
+      document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-key-placeholder');
+        if (translations[key]) {
+          el.placeholder = translations[key];
+        }
+      });
+      // Update logo text (static)
+      document.getElementById('siteLogo').innerHTML = "पूज्य श्री पंडित अरविंद कृष्ण शास्त्री जी महाराज";
+      document.getElementById('footerLogo').innerHTML = "पूज्य श्री पंडित अरविंद कृष्ण शास्त्री जी महाराज";
+      document.getElementById('langToggle').innerHTML = "English";
+    } else {
+      // revert to English (original text from HTML, but we need to restore)
+      location.reload(); // simplest reliable reset, but better to store original text?
+      // To avoid reload, we would need to store original text, but reload is straightforward.
+      // However, for smooth toggle without reload, we can store original content in dataset.
+      // But since we are generating final, I'll implement a proper toggle that restores from dataset.
+      // Let's implement a robust version: on page load, store original texts.
+      if (!window.originalTexts) {
+        window.originalTexts = {};
+        document.querySelectorAll('[data-key]').forEach(el => {
+          const key = el.getAttribute('data-key');
+          window.originalTexts[key] = el.innerHTML;
+        });
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-key-placeholder');
+          window.originalTexts[key] = el.placeholder;
+        });
+        window.originalLogo = document.getElementById('siteLogo').innerHTML;
+        window.originalFooterLogo = document.getElementById('footerLogo').innerHTML;
+      }
+      // Restore
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (window.originalTexts[key]) {
+          if (el.tagName === 'BUTTON') {
+            el.innerHTML = window.originalTexts[key];
+          } else {
+            el.innerHTML = window.originalTexts[key];
+          }
+        }
+      });
+      document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-key-placeholder');
+        if (window.originalTexts[key]) el.placeholder = window.originalTexts[key];
+      });
+      document.getElementById('siteLogo').innerHTML = window.originalLogo;
+      document.getElementById('footerLogo').innerHTML = window.originalFooterLogo;
+      document.getElementById('langToggle').innerHTML = "हिंदी";
+    }
+    currentLang = lang;
+  }
+
+  // Store original texts on page load (before any translation)
+  window.addEventListener('DOMContentLoaded', () => {
+    window.originalTexts = {};
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      window.originalTexts[key] = el.innerHTML;
+    });
+    document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-key-placeholder');
+      window.originalTexts[key] = el.placeholder;
+    });
+    window.originalLogo = document.getElementById('siteLogo').innerHTML;
+    window.originalFooterLogo = document.getElementById('footerLogo').innerHTML;
+    
+    // Language toggle event
+    const toggleBtn = document.getElementById('langToggle');
+    toggleBtn.addEventListener('click', () => {
+      if (currentLang === 'en') {
+        applyLanguage('hi');
+      } else {
+        applyLanguage('en');
+      }
+    });
+  });
+
+  // Mobile menu, scroll reveal, back to top, gallery, form (same as before)
+  const menuIcon = document.getElementById('menuIcon');
+  const navLinks = document.getElementById('navLinks');
+  menuIcon.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => { navLinks.classList.remove('active'); });
+  });
+
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  fadeElements.forEach(el => observer.observe(el));
+
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) backBtn.classList.add('visible');
+    else backBtn.classList.remove('visible');
+  });
+  backBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  const galleryContainer = document.getElementById('galleryGrid');
+  const galleryImages = [
+    './pictures/IMG-20250323-WA0022.jpg', './pictures/IMG-20250323-WA0005.jpg', './pictures/IMG-20250323-WA0006.jpg',
+    './pictures/IMG-20250323-WA0007.jpg', './pictures/IMG-20250323-WA0008.jpg', './pictures/IMG-20250323-WA0013.jpg',
+    './pictures/IMG-20250323-WA0015.jpg', './pictures/IMG-20250323-WA0018.jpg', './pictures/IMG-20250323-WA0020.jpg',
+    './pictures/IMG-20250323-WA0035.jpg'
+  ];
+  const carouselVideos = [
+    'https://www.youtube.com/embed/85JBTXAkmEQ',
+    'https://www.youtube.com/embed/4QgqE_hjiZE',
+    'https://www.youtube.com/embed/W8q0dtzZzrA',
+    'https://www.youtube.com/embed/69diEScu7dY'
+  ];
+  let currentVideoIndex = 0;
+  let carouselInterval;
+
+  function currentSlide(index) {
+    currentVideoIndex = index;
+    document.getElementById('carouselIframe').src = carouselVideos[index];
+    updateDots();
+    clearInterval(carouselInterval);
+    carouselInterval = setInterval(nextCarouselVideo, 5000);
+  }
+
+  function nextCarouselVideo() {
+    currentVideoIndex = (currentVideoIndex + 1) % carouselVideos.length;
+    document.getElementById('carouselIframe').src = carouselVideos[currentVideoIndex];
+    updateDots();
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      if (index === currentVideoIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  // Start carousel on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    carouselInterval = setInterval(nextCarouselVideo, 5000);
+  });
+
+  galleryImages.forEach((src, idx) => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.innerHTML = `<img src="${src}" alt="Katha Gallery ${idx+1}" loading="lazy">`;
+    galleryContainer.appendChild(div);
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert(currentLang === 'en' ? '🙏 Thank you! Your message has been received.' : '🙏 धन्यवाद! आपका संदेश प्राप्त हो गया है।');
+    contactForm.reset();
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === "#" || href === "") return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.scrollY + 120;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
